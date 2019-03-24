@@ -5,10 +5,10 @@ public class Game {
 	public static void main(String[] args) {
 		
 		Game game = new Game();
-		GameDriver gd = new GameDriver();
-		Enemies Hitler = new Enemies("Hitler", 5);
-		Enemies Mao = new Enemies("Mao", 5);
-		Enemies Stalin = new Enemies("Stalin", 5);
+		DriverCopy gd = new DriverCopy();
+		Enemy Hitler = new Enemy("Hitler", 5);
+		Enemy Mao = new Enemy("Mao", 5);
+		Enemy Stalin = new Enemy("Stalin", 5);
 		
 		
 		gd.fightEnemy(Stalin);

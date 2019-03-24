@@ -1,10 +1,10 @@
 package LordOfTheObjects;
 
-public class GameCharacters {
+public class GameCharacter {
 	protected String name;
 	protected int health;
 
-	public GameCharacters(String name, int health) {
+	public GameCharacter(String name, int health) {
 		super();
 		this.name = name;
 		this.health = health;

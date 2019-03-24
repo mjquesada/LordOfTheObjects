@@ -1,6 +1,6 @@
 package LordOfTheObjects;
 
-public class Player extends GameCharacters {
+public class Player extends GameCharacter {
 	
 	protected String items;
 	
