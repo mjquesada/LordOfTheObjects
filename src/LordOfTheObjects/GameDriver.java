@@ -1,4 +1,5 @@
 package LordOfTheObjects;
+
 import java.util.Scanner;
 
 public class GameDriver {
@@ -7,7 +8,7 @@ public class GameDriver {
 	private int playerHealth = 0, enemyHealth = 0;
 	private String[] misses = { "Ha Ha Ha, you missed", "Good try Stevie Wonder", "My Grandma could do better" };
 	private String[] hits = { "Awe, right in my eye", "Ouch, thats going to leave a mark",
-			"right in the nut crackers" };
+			"right in the nut crackers"};
 //	private String playerName = "";
 	private int choice = 0;
 //	GameDriver shopKeeper = new GameDriver();
@@ -15,18 +16,19 @@ public class GameDriver {
 	public void mainGame() {
 		boolean keepPlaying = true;
 
-		System.out.println("Please choose a name.");
+		System.out.println("Welcome to zombie dictator");
+		System.out.println("Please choose a name:");
 		String p1Name = kb.nextLine();
 		Player playerOne = new Player(p1Name, 400, "");
 		Enemy Mao = new Enemy("Mao", 100);
-		Mao.setBattleCries(new String[] {"Mao: 為偉大的飛躍做好準備 (Prepare for the great leap!)",
-											 "Mao: 農民團結起來 (Peasants unite!)"});
+		Mao.setBattleCries(
+				new String[] { "Mao: 為偉大的飛躍做好準備 (Prepare for the great leap!)", "Mao: 農民團結起來 (Peasants unite!)" });
 		Enemy Stalin = new Enemy("Stalin", 100);
-		Stalin.setBattleCries(new String[] {"Stalin: для матери России (For mother Russia!)", 
-												"Stalin: долой капиталистов (Down with the capitalists!)"}); 
+		Stalin.setBattleCries(new String[] { "Stalin: для матери России (For mother Russia!)",
+				"Stalin: долой капиталистов (Down with the capitalists!)" });
 		Enemy Hitler = new Enemy("Hitler", 100);
-		Hitler.setBattleCries(new String[] {"Hitler: Du hast keine Chance (You don't stand a chance)", 
-												" Hitler: Für das Vaterland (For the fatherland!)"});
+		Hitler.setBattleCries(new String[] { "Hitler: Du hast keine Chance (You don't stand a chance)",
+				" Hitler: Für das Vaterland (For the fatherland!)" });
 		backStory(playerOne);
 		int v = 0;
 		do {
@@ -48,7 +50,7 @@ public class GameDriver {
 			fightEnemy(enemy);
 			System.out.println(enemy.getName() + " has " + enemy.getHealth() + " health left.");
 			if (enemy.getHealth() <= 0) {
-				System.out.println("You were vistorius!!!");
+				System.out.println("You were victorius!!!");
 				v++;
 			} else {
 
@@ -82,18 +84,24 @@ public class GameDriver {
 			choice = kb.nextInt();
 
 			if (choice == 1) {
-				System.out.println("Welcome to China, the land of the rising sun. \n"
-						+ "As you walk through the rice paddy field a shadowy figure \n"
-						+ "catches your eye. He walks closer to you and as he slowly rasies \n"
-						+ "his eyes to catch yours, you realize its the tyrannical leader, Mao!\n");
+				System.out.println("Welcome to China, which is currently in the middle of a civil war...");
+				kb.nextLine();
+				System.out.println("As you walk through the rice paddy field a shadowy figure");
+				System.out.println("catches your eye. He walks closer to you and as he slowly rasies");
+				System.out.println("his eyes to catch yours, you realize its leader of the zombie revelution, Mao Zedong!");
+				System.out.println("Mao attacks!");
+			
+					
 				choiceInput = false;
 			} else if (choice == 2) {
 				System.out.println("Welcome to mutha Russia! The land of vodka and awesome dashcam videos. ");
+				System.out.println("While scaveging for supplies in Moscow, you run into a group of zombies led by Stalin himself");
+				System.out.println("Zombie Stalin attacks!");
 				choiceInput = false;
 			} else if (choice == 3) {
-				System.out.println("Welcome to Germany, the land of beer and lederhosen. As you walk \n"
-						+ "through the post apocolyptic wasteland of Berlin, a \"aaarrgghhh\" from one \n"
-						+ "of the bars. Out stumbles a drunken zombie Hitler!. \n");
+				System.out.println("Welcome to Germany, the land of beer and lederhosen. As you walk");
+				System.out.println("through the post apocolyptic wasteland of Berlin, a \"aaarrgghhh\" from one");
+				System.out.println("of the bars. Out stumbles a drunken zombie Hitler and he attacks!.");
 				choiceInput = false;
 			} else {
 				System.out.println("That is not an option. Choose again!");
@@ -131,16 +139,37 @@ public class GameDriver {
 
 	public void backStory(Player p) {
 
-		System.out.println("In a galaxy far far away, it was September 2, 1945. A young soldier named" + p.getName()
-				+ ", " + "was roaming the country side of southern Germany. \n"
-				+ "He then notice a bright light that erupted from the horizon.\n "
-				+ "A mushroom cloud slowly climbing towards the heavens appeard. \n" + p.getName()
-				+ " thought quickly, like a young Indiana Jones, "
-				+ "he ran into the closest house he could find. Ripping through the house like a mad-man, he found the refridgerator. \n"
-				+ "He pulled everything out of it and jumped in, \n"
-				+ "knowing the led lining would keep him safe. He soon went on for the\n "
-				+ "ride of his life. After going unconcious for a few hours, \n" + p.getName()
-				+ " woke up and slowly peaked his head out \n"
-				+ " of the refridgerator, only to realize the world will never be the same.\n");
+		System.out.println("In a galaxy far far away, it was September 2, 1945. A young soldier named " + p.getName() +", ");
+		kb.nextLine();
+				
+		System.out.println("was roaming the country side of southern Germany.");
+		kb.nextLine();
+		
+		System.out.println("He noticed a bright light that suddenly erupted from the horizon.");
+		kb.nextLine();
+
+		System.out.println("A mushroom cloud slowly climbing towards the heavens appeard. ");
+		kb.nextLine();
+		
+		System.out.println(p.getName() + " thought quickly, like a young Indiana Jones, ");
+		kb.nextLine();
+
+		System.out.println("he ran into the closest house he could find. Ripping through the house like a mad-man,");
+		kb.nextLine();
+		
+		System.out.println("he found the refridgerator, and pulled everything out of it and jumped in,");
+		kb.nextLine();
+		
+		System.out.println("knowing the lead lining would keep him safe. He was now in for the ");
+		kb.nextLine();
+		
+		System.out.println( "ride of his life. After being unconcious for a few hours, ");
+		kb.nextLine();
+		
+		System.out.println(p.getName() + " woke up and slowly peaked his head out of the refridgerator");
+		kb.nextLine();
+		
+		System.out.println("Only to realize the world he knew was gone.");
+		kb.nextLine();
 	}
 }
