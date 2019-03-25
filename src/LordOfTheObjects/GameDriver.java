@@ -4,14 +4,11 @@ import java.util.Scanner;
 
 public class GameDriver {
 	public static Scanner kb = new Scanner(System.in);
-
-	private int playerHealth = 0, enemyHealth = 0;
-	private String[] misses = { "Ha Ha Ha, you missed", "Good try Stevie Wonder", "My Grandma could do better" };
+	private int choice = 0;
+	
+	//private String[] misses = { "Ha Ha Ha, you missed", "Good try Stevie Wonder", "My Grandma could do better" };
 	private String[] hits = { "Awe, right in my eye", "Ouch, thats going to leave a mark",
 			"right in the nut crackers"};
-//	private String playerName = "";
-	private int choice = 0;
-//	GameDriver shopKeeper = new GameDriver();
 
 	public void mainGame() {
 		boolean keepPlaying = true;
@@ -32,7 +29,6 @@ public class GameDriver {
 		backStory(playerOne);
 		int v = 0;
 		do {
-
 			int choice1 = playerCountryChoice(playerOne);
 			Enemy enemy = null;
 
@@ -72,7 +68,6 @@ public class GameDriver {
 
 		} while (keepPlaying);
 	}
-
 	public int playerCountryChoice(Player p) {
 		boolean choiceInput = true;
 		do {
@@ -91,7 +86,6 @@ public class GameDriver {
 				System.out.println("his eyes to catch yours, you realize its leader of the zombie revelution, Mao Zedong!");
 				System.out.println("Mao attacks!");
 			
-					
 				choiceInput = false;
 			} else if (choice == 2) {
 				System.out.println("Welcome to mutha Russia! The land of vodka and awesome dashcam videos. ");
@@ -109,7 +103,6 @@ public class GameDriver {
 		} while (choiceInput);
 		return choice;
 	}
-
 	public void fightEnemy(GameCharacter opponent) {
 		int attackOutcome = 0;
 		int damage = 0;
@@ -117,26 +110,10 @@ public class GameDriver {
 		boolean fightOutcome = true;
 
 		damage = (int) (Math.random() * 100 + 1);
-		opponent.setHealth(opponent.getHealth() - damage);
-		System.out.println(hits[h]);
-		h++;
-//		while (fightOutcome) {
-//			if () {
-//				attackOutcome = (int) (Math.random() * 10 + 1);
-//			} else if (choice == 2) {
-//				System.out.println("You little coward, come back and fight me!");
-//			} else if (attackOutcome > 3) {
-//				damage = (int) (Math.random() * 100 + 1);
-//				damage = playerHealth - damage;
-//				System.out.println(hits[h]);
-//				h++;
-//			} else if (attackOutcome <= 3) {
-//				System.out.println(misses[m]);
-//				m++;
-//			}
+        opponent.setHealth(opponent.getHealth() - damage);
+        h = (int)(Math.random() * hits.length);
+        System.out.println(hits[h]);
 	}
-//}
-
 	public void backStory(Player p) {
 
 		System.out.println("In a galaxy far far away, it was September 2, 1945. A young soldier named " + p.getName() +", ");
@@ -144,31 +121,22 @@ public class GameDriver {
 				
 		System.out.println("was roaming the country side of southern Germany.");
 		kb.nextLine();
-		
 		System.out.println("He noticed a bright light that suddenly erupted from the horizon.");
 		kb.nextLine();
-
 		System.out.println("A mushroom cloud slowly climbing towards the heavens appeard. ");
 		kb.nextLine();
-		
 		System.out.println(p.getName() + " thought quickly, like a young Indiana Jones, ");
 		kb.nextLine();
-
 		System.out.println("he ran into the closest house he could find. Ripping through the house like a mad-man,");
 		kb.nextLine();
-		
 		System.out.println("he found the refridgerator, and pulled everything out of it and jumped in,");
 		kb.nextLine();
-		
 		System.out.println("knowing the lead lining would keep him safe. He was now in for the ");
 		kb.nextLine();
-		
 		System.out.println( "ride of his life. After being unconcious for a few hours, ");
 		kb.nextLine();
-		
 		System.out.println(p.getName() + " woke up and slowly peaked his head out of the refridgerator");
 		kb.nextLine();
-		
 		System.out.println("Only to realize the world he knew was gone.");
 		kb.nextLine();
 	}

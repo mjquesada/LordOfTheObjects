@@ -6,7 +6,6 @@ public class Enemy extends GameCharacter {
 	public void battleCry() {
 		System.out.println(battleCries[(int)(Math.random() * battleCries.length)]);
 	}
-
 	public String[] getBattleCries() {
 		return battleCries;
 	}
@@ -15,7 +14,6 @@ public class Enemy extends GameCharacter {
 	}
 	public Enemy(String name, int health) {
 		super(name, health);
-		
 	}
 	public String getName() {
 		return name;
@@ -29,8 +27,4 @@ public class Enemy extends GameCharacter {
 	public void setHealth(int health) {
 		this.health = health;
 	}
-
 }	
-	
-	
-

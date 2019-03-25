@@ -26,7 +26,4 @@ public class Player extends GameCharacter {
 	public void setItems(String items) {
 		this.items = items;
 	}
-	
-	
-	
 }
